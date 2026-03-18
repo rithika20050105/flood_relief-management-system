@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Create Request</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(135deg,#000000,#021b3a);
+color:white;
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:30px;
+}
+
+header{
+text-align:center;
+margin-bottom:20px;
+}
+
+header img{
+width:70px;
+margin-bottom:10px;
+}
+
+.container{
+background:rgba(0,0,0,0.6);
+padding:40px;
+width:350px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,140,255,0.5);
+}
+
+.container input,
+.container select,
+.container textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+background:#0a2540;
+color:white;
+font-size:14px;
+}
+
+.container textarea{
+resize:none;
+height:80px;
+}
+
+.container input::placeholder,
+.container textarea::placeholder{
+color:#aaa;
+}
+
+.container button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:8px;
+background:linear-gradient(90deg,#0066ff,#00bfff);
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.container button:hover{
+opacity:0.9;
+}
+
+.error{
+color:#ff6b6b;
+font-size:13px;
+}
+
+#charCount{
+font-size:12px;
+color:#ccc;
+margin-top:-5px;
+}
+
+</style>
+
+<script src="js/script.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<img src="images/logo.png">
+<h2>Create Relief Request</h2>
+</header>
+
+<div class="container">
+
+<form action="php/create_request.php" method="POST" onsubmit="return phoneValidate()">
+
+<input type="text" name="name" id="name" placeholder="Contact Person Name" required>
+
+<select name="relief_type" required>
+<option value="">Select Relief Type</option>
+<option value="Food">Food</option>
+<option value="Water">Water</option>
+<option value="Medicine">Medicine</option>
+<option value="Shelter">Shelter</option>
+</select>
+
+<input type="text" name="district" placeholder="District" required>
+
+<input type="text" name="ds_division" placeholder="Divisional Secretariat" required>
+
+<input type="text" name="gn_division" placeholder="GN Division">
+
+<input type="text" name="contact_number" id="contact_number" placeholder="Contact Number" required>
+
+<p id="phoneError" class="error"></p>
+
+<textarea name="address" placeholder="Address" required></textarea>
+
+<input type="number" name="family_members" placeholder="Family Members" required>
+
+<select name="severity" required>
+<option value="">Select Severity</option>
+<option value="Low">Low</option>
+<option value="Medium">Medium</option>
+<option value="High">High</option>
+</select>
+
+<textarea name="description" id="description" placeholder="Description" onkeyup="countCharacters()"></textarea>
+
+<p id="charCount">0 characters</p>
+
+<button type="submit">Submit Request</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
