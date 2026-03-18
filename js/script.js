@@ -19,6 +19,57 @@ return false;
 
 return true;
 }
+// rithika's part
+//delete confirmation
+document.addEventListener("DOMContentLoaded", function(){
+
+let deleteButtons = document.querySelectorAll(".deleteBtn");
+
+deleteButtons.forEach(function(btn){
+
+btn.addEventListener("click", function(e){
+
+e.preventDefault();
+
+let url = this.getAttribute("href");
+
+showConfirm("Are you sure you want to delete this request?", url);
+
+});
+
+});
+
+});
+
+
+function showConfirm(message, url){
+
+let box = document.createElement("div");
+box.className = "confirmBox";
+
+box.innerHTML = `
+<p>${message}</p>
+<button id="yesBtn">Yes</button>
+<button id="noBtn">Cancel</button>
+`;
+
+document.body.appendChild(box);
+
+document.getElementById("yesBtn").onclick = function(){
+window.location = url;
+};
+
+document.getElementById("noBtn").onclick = function(){
+box.remove();
+};
+
+}
+
+
+
+
+
+
 //added  tharindi-AS20240467
 //count character
 function countCharacters(){
