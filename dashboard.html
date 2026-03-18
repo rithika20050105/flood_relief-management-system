@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>User Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(135deg,#000000,#021b3a);
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+header{
+text-align:center;
+margin-bottom:30px;
+}
+
+header img{
+width:70px;
+margin-bottom:10px;
+}
+
+.adminMenu{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 25px rgba(0,140,255,0.5);
+width:300px;
+}
+
+.adminBtn{
+display:block;
+text-decoration:none;
+color:white;
+background:linear-gradient(90deg,#0066ff,#00bfff);
+padding:12px;
+margin:15px 0;
+border-radius:8px;
+font-weight:bold;
+}
+
+.adminBtn:hover{
+opacity:0.9;
+}
+
+</style>
+
+<script src="js/script.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<img src="usjp-logo.png">
+<h2>User Dashboard</h2>
+</header>
+
+<div class="adminMenu">
+
+<a href="create_request.html" class="adminBtn">Create Request</a>
+
+<a href="php/view_request.php" class="adminBtn">View Requests</a>
+
+<a href="php/logout.php" class="adminBtn">Logout</a>
+
+</div>
+
+</body>
+</html>
