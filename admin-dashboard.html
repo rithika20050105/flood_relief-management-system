@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Admin Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(135deg,#000000,#021b3a);
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+header{
+text-align:center;
+margin-bottom:40px;
+}
+
+header img{
+width:70px;
+margin-bottom:10px;
+}
+
+.adminMenu{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 25px rgba(0,140,255,0.5);
+width:300px;
+}
+
+.adminBtn{
+display:block;
+text-decoration:none;
+color:white;
+background:linear-gradient(90deg,#0066ff,#00bfff);
+padding:12px;
+margin:15px 0;
+border-radius:8px;
+font-weight:bold;
+}
+
+.adminBtn:hover{
+opacity:0.9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<img src="usjp-logo.png">
+<h2>Admin Dashboard</h2>
+</header>
+
+<div class="adminMenu">
+
+<a href="php/view_request.php" class="adminBtn">View All Requests</a>
+
+<a href="php/reports.php" class="adminBtn">System Reports</a>
+
+<a href="php/logout.php" class="adminBtn">Logout</a>
+
+</div>
+
+</body>
+</html>
